@@ -1,0 +1,81 @@
+===================================
+Available commands:
+0. Exit
+1. Add a figure via id
+2. Print info for every figure
+3. Print the overall area
+4. Remove a figure via id
+
+Enter a figure id (1 - square, 2 - rectangle, 3 - trapezoid): Enter 4 (x, y) points in a sequence
+Wrong sequence or the sides are not equal and/or parallel
+
+===================================
+Available commands:
+0. Exit
+1. Add a figure via id
+2. Print info for every figure
+3. Print the overall area
+4. Remove a figure via id
+
+No figures to display
+
+===================================
+Available commands:
+0. Exit
+1. Add a figure via id
+2. Print info for every figure
+3. Print the overall area
+4. Remove a figure via id
+
+Enter a figure id (1 - square, 2 - rectangle, 3 - trapezoid): Enter 4 (x, y) points in a sequence
+Wrong sequence or the sides are not parallel
+
+===================================
+Available commands:
+0. Exit
+1. Add a figure via id
+2. Print info for every figure
+3. Print the overall area
+4. Remove a figure via id
+
+No figures to display
+
+===================================
+Available commands:
+0. Exit
+1. Add a figure via id
+2. Print info for every figure
+3. Print the overall area
+4. Remove a figure via id
+
+Enter a figure id (1 - square, 2 - rectangle, 3 - trapezoid): Enter 4 (x, y) points in a sequence
+Wrong sequence or two opposite sides are not parallel
+
+===================================
+Available commands:
+0. Exit
+1. Add a figure via id
+2. Print info for every figure
+3. Print the overall area
+4. Remove a figure via id
+
+No figures to display
+
+===================================
+Available commands:
+0. Exit
+1. Add a figure via id
+2. Print info for every figure
+3. Print the overall area
+4. Remove a figure via id
+
+No figures to calculate the area for
+
+===================================
+Available commands:
+0. Exit
+1. Add a figure via id
+2. Print info for every figure
+3. Print the overall area
+4. Remove a figure via id
+

@@ -1,0 +1,60 @@
+===================================
+Available commands:
+0. Exit
+1. Add a figure via id
+2. Print info for every figure
+3. Print the overall area
+4. Remove a figure via id
+
+Enter a figure id (1 - square, 2 - rectangle, 3 - trapezoid): Enter 4 (x, y) points in a sequence
+Square created
+
+===================================
+Available commands:
+0. Exit
+1. Add a figure via id
+2. Print info for every figure
+3. Print the overall area
+4. Remove a figure via id
+
+Enter a figure id (1 - square, 2 - rectangle, 3 - trapezoid): Enter 4 (x, y) points in a sequence
+Rectangle created
+
+===================================
+Available commands:
+0. Exit
+1. Add a figure via id
+2. Print info for every figure
+3. Print the overall area
+4. Remove a figure via id
+
+ID: 0
+Square:
+Coordinates: A(1, -1), B(3, -3), C(5, -1), D(3, 1)
+Center : (3, -1)
+Area: 8
+
+ID: 1
+Rectangle:
+Coordinates: A(1, 0), B(0, 1), C(999, 1000), D(1000, 999)
+Center : (500, 500)
+Area: 1998
+
+===================================
+Available commands:
+0. Exit
+1. Add a figure via id
+2. Print info for every figure
+3. Print the overall area
+4. Remove a figure via id
+
+Overall area: 2006
+
+===================================
+Available commands:
+0. Exit
+1. Add a figure via id
+2. Print info for every figure
+3. Print the overall area
+4. Remove a figure via id
+
