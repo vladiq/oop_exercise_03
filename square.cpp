@@ -5,18 +5,14 @@ Square::Square() {
         x_[i] = 0;
         y_[i] = 0;
     }
-    area_ = 0;
-	xCenter_ = 0;
-    yCenter_ = 0;
 }
 
 Square::Square(std::istream& is) {
     is >> *this;
-    area_ = CalculateArea();
-    CalculateCenter();
+    assert(IsCorrect());
 }
 
-bool Square::IsCorrect() const {
+int Square::IsCorrect() const {
     double vec1_x = x_[1] - x_[0];
     double vec1_y = y_[1] - y_[0];
 
@@ -33,21 +29,27 @@ bool Square::IsCorrect() const {
     double vec2_length = sqrt(vec2_x * vec2_x + vec2_y * vec2_y);
 
     if (dotProduct1 == 0 && dotProduct2 == 0 && vec1_length == vec2_length) {
-        return true;
+        return 1;
     }
-    return false;
+    return 0;
 }
 
-void Square::CalculateCenter() {
-    xCenter_ = (x_[0] + x_[2]) / 2;
-    yCenter_ = (y_[0] + y_[2]) / 2;
+std::ostream& Square::CalculateCenter(std::ostream& os) const {
+    double xCenter = (x_[0] + x_[2]) / 2;
+    double yCenter = (y_[0] + y_[2]) / 2;
+
+    os << "Center : " << "(" << xCenter << ", " << yCenter << ')' << std::endl;
+    return os;
 }
 
-double Square::CalculateArea() {
+std::ostream& Square::CalculateArea(std::ostream& os) const {
     double vecX = x_[1] - x_[0];
     double vecY = y_[1] - y_[0];
 
-    return vecX * vecX + vecY * vecY;
+    double area = vecX * vecX + vecY * vecY;
+
+    os << "Area: " << area << std::endl << std::endl;
+    return os;
 }
 
 void Square::Print(std::ostream& os) const {
@@ -60,8 +62,6 @@ std::ostream& operator<< (std::ostream &os, const Square& square) {
     os << "B(" << square.x_[1] << ", " << square.y_[1] << "), ";
     os << "C(" << square.x_[2] << ", " << square.y_[2] << "), ";
     os << "D(" << square.x_[3] << ", " << square.y_[3] << ")" << std::endl;
-    os << "Center : " << "(" << square.xCenter_ << ", " << square.yCenter_ << ')' << std::endl;
-    os << "Area: " << square.area_ << std::endl << std::endl;
     
     return os;
 }

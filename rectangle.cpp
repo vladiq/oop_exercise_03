@@ -5,18 +5,14 @@ Rectangle::Rectangle() {
         x_[i] = 0;
         y_[i] = 0;
     }
-    area_ = 0;
-	xCenter_ = 0;
-    yCenter_ = 0;
 }
 
 Rectangle::Rectangle(std::istream& is) {
     is >> *this;
-    area_ = CalculateArea();
-    CalculateCenter();
+    assert(IsCorrect());
 }
 
-bool Rectangle::IsCorrect() const {
+int Rectangle::IsCorrect() const {
     double vec1_x = x_[1] - x_[0];
     double vec1_y = y_[1] - y_[0];
 
@@ -30,28 +26,34 @@ bool Rectangle::IsCorrect() const {
     double dotProduct2 = vec3_x * vec1_x + vec3_y * vec1_y;
 
     if (dotProduct1 == 0 && dotProduct2 == 0) {
-        return true;
+        return 1;
     }
-    return false;
+    return 0;
 }
 
-void Rectangle::CalculateCenter() {
-    xCenter_ = (x_[0] + x_[2]) / 2;
-    yCenter_ = (y_[0] + y_[2]) / 2;
+std::ostream& Rectangle::CalculateCenter(std::ostream& os) const {
+    double xCenter = (x_[0] + x_[2]) / 2;
+    double yCenter = (y_[0] + y_[2]) / 2;
+    os << "Center : " << "(" << xCenter << ", " << yCenter << ')' << std::endl;
+    return os;
 }
 
-double Rectangle::CalculateArea() {
+std::ostream& Rectangle::CalculateArea(std::ostream& os) const {
     double xHeight = x_[1] - x_[0];
     double yHeight = y_[1] - y_[0];
 
     double xWidth = x_[2] - x_[1];
     double yWidth = y_[2] - y_[1];
 
-    return sqrt(xHeight * xHeight + yHeight * yHeight) * sqrt(xWidth * xWidth + yWidth * yWidth);
+    double area = sqrt(xHeight * xHeight + yHeight * yHeight) * sqrt(xWidth * xWidth + yWidth * yWidth);
+
+    os << "Area: " << area << std::endl << std::endl;
+    return os;
 }
 
 void Rectangle::Print(std::ostream& os) const {
     os << *this;
+    CalculateArea(std::cout);
 }
 
 std::ostream& operator<< (std::ostream &os, const Rectangle& rectangle) {
@@ -60,8 +62,6 @@ std::ostream& operator<< (std::ostream &os, const Rectangle& rectangle) {
     os << "B(" << rectangle.x_[1] << ", " << rectangle.y_[1] << "), ";
     os << "C(" << rectangle.x_[2] << ", " << rectangle.y_[2] << "), ";
     os << "D(" << rectangle.x_[3] << ", " << rectangle.y_[3] << ")" << std::endl;
-    os << "Center : " << "(" << rectangle.xCenter_ << ", " << rectangle.yCenter_ << ')' << std::endl;
-    os << "Area: " << rectangle.area_ << std::endl << std::endl;
     
     return os;
 }
