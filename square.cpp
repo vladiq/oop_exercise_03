@@ -22,13 +22,17 @@ int Square::IsCorrect() const {
     double vec3_x = x_[3] - x_[0];
     double vec3_y = y_[3] - y_[0];
 
+    double vec4_x = x_[3] - x_[2];
+    double vec4_y = y_[3] - y_[2];
+
     double dotProduct1 = vec1_x * vec2_x + vec1_y * vec2_y;
     double dotProduct2 = vec3_x * vec1_x + vec3_y * vec1_y;
+    double dotProduct3 = vec3_x * vec4_x + vec3_y * vec4_y;
 
     double vec1_length = sqrt(vec1_x * vec1_x + vec1_y * vec1_y);
     double vec2_length = sqrt(vec2_x * vec2_x + vec2_y * vec2_y);
 
-    if (dotProduct1 == 0 && dotProduct2 == 0 && vec1_length == vec2_length) {
+    if (dotProduct1 == 0 && dotProduct2 == 0 && dotProduct3 == 0 && vec1_length == vec2_length) {
         return 1;
     }
     return 0;
